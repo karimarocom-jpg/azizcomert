@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aziz Cömert AB</title>
+<meta name="description" content="Aziz Cömert AB – Swedish restaurant and food service company based in Stockholm.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0a0908;--head:#f6ede1;--alt:#141210;color-scheme:dark;--blue:#fb923c;--gold:#f97316;--bg:#0e0d0c;--card:#1a1816;--text:#e6dccf;--muted:#a89d90;--line:#2f2a25}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.65}
+a{color:var(--blue)}
+.wrap{max-width:1040px;margin:auto;padding:0 20px}
+header{border-bottom:1px solid #2a2622;position:sticky;top:0;z-index:10;background:var(--navy);color:#fff}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:12px}
+.logo{font-weight:700;letter-spacing:.3px;color:#fff;text-decoration:none}
+.logo b{color:var(--gold)}
+nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+nav a{color:#eadfd2;text-decoration:none;font-size:.95rem}
+nav a:hover{color:#fff}
+select{background:transparent;color:#fff;border:1px solid #6b5a4a;border-radius:6px;padding:4px 6px;font-size:.9rem}
+select option{color:#FFFFFF}
+.hero{background:linear-gradient(90deg,rgba(10,8,6,.82),rgba(10,8,6,.25)),url(hero-bg.svg) center/cover no-repeat,linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:120px 0 110px}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;max-width:700px}
+.hero p{margin:18px 0 28px;max-width:600px;color:#eadfd2;font-size:1.1rem}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:600;padding:12px 26px;border-radius:8px;text-decoration:none}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn.ghost{background:transparent;color:#fff;border:2px solid var(--gold);padding:10px 24px}
+.btn.ghost:hover{background:var(--gold);color:var(--navy)}
+section{padding:72px 0}
+h2{color:var(--head);font-size:1.8rem;margin-bottom:8px}
+h2::after{content:"";display:block;width:48px;height:3px;background:var(--gold);margin-top:8px}
+.lead{margin:20px 0 32px;max-width:720px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--blue);border-radius:10px;padding:24px}
+.card h3{color:var(--head);margin-bottom:6px;font-size:1.1rem}
+.card p{color:var(--muted);font-size:.95rem}
+.card.photo{position:relative;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;border:0;border-top:3px solid var(--gold);background-color:#1c1815;background-size:cover;background-position:center;overflow:hidden}
+.card.photo h3{color:#fff}
+.card.photo p{color:#eadfd2}
+.card.photo .icon{background:var(--gold);color:#fff}
+.card.q{background-image:linear-gradient(180deg,rgba(10,8,6,.25),rgba(10,8,6,.88)),url(quality.svg)}
+.card.h{background-image:linear-gradient(180deg,rgba(10,8,6,.25),rgba(10,8,6,.88)),url(hospitality.svg)}
+.card.t{background-image:linear-gradient(180deg,rgba(10,8,6,.25),rgba(10,8,6,.88)),url(transparency.svg)}
+.alt{background:var(--alt)}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:10px 22px}
+dt{font-weight:600;color:var(--head)}
+footer{background:var(--navy);color:#c9bcae;padding:36px 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+footer a{color:#fff}
+.eyebrow{color:var(--gold);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;margin-bottom:6px}
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;margin:28px 0 44px;align-items:start}
+.about-grid h3.big{font-size:1.5rem;color:var(--head);line-height:1.3;margin-bottom:14px}
+.about-grid p{color:var(--muted);margin-bottom:14px}
+.facts{background:var(--navy);border:1px solid var(--line);color:#fff;border-radius:12px;padding:28px;border-top:4px solid var(--gold)}
+.facts h4{font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:.93rem}
+.facts div:last-child{border:0}
+.facts span{color:#c9bcae}.facts b{text-align:right;font-weight:600}
+.icon{width:46px;height:46px;border-radius:10px;background:#2a1c11;color:var(--blue);display:grid;place-items:center;margin-bottom:14px}
+.icon svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:800px){.about-grid{grid-template-columns:1fr}}
+@media(max-width:560px){dl{grid-template-columns:1fr}dt{margin-top:8px}}
+/* Toolbar */
+html{scroll-padding-top:92px}
+header{background:linear-gradient(90deg,rgba(10,9,8,.88),rgba(10,9,8,.45)),url(header-bg.svg) center/cover no-repeat,var(--navy);border-bottom:2px solid var(--gold);box-shadow:0 4px 18px rgba(0,0,0,.45)}
+header .wrap{height:76px}
+.logo{display:flex;align-items:center;gap:12px;font-size:1.1rem;font-weight:700;letter-spacing:.02em}
+.mark{width:38px;height:38px;border-radius:9px;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-size:.9rem;font-weight:800;letter-spacing:0}
+nav{gap:4px}
+nav>a{padding:8px 14px;border-radius:8px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#eadfd2}
+nav>a:hover{color:#fff;background:rgba(249,115,22,.18)}
+nav>a.navbtn{background:var(--gold);color:var(--navy)}
+nav>a.navbtn:hover{background:#fb923c;color:var(--navy)}
+select{margin-left:10px;background:rgba(0,0,0,.5);border:1px solid var(--gold);border-radius:999px;padding:6px 12px;font-weight:600;cursor:pointer}
+@media(max-width:700px){header .wrap{height:auto;padding:10px 20px;flex-wrap:wrap;justify-content:center}nav{justify-content:center}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#home"><span class="mark">AC</span><span>Aziz Cömert <b>AB</b></span></a>
+<nav>
+<a href="#home" data-i18n="nav_home">Home</a>
+<a href="#about" data-i18n="nav_about">About</a>
+<a class="navbtn" href="#contact" data-i18n="nav_contact">Contact</a>
+<select id="lang" aria-label="Language"><option value="en">EN</option><option value="sv">SV</option><option value="fr">FR</option></select>
+</nav></div></header>
+
+<main>
+<div class="hero" id="home"><div class="wrap">
+<h1 data-i18n="h_title">Good food and warm hospitality in Stockholm.</h1>
+<p data-i18n="h_sub">Aziz Cömert AB is a Swedish limited company operating a restaurant in the Stockholm area since 2016.</p>
+<div class="cta"><a class="btn" href="#contact" data-i18n="h_cta">Get in touch</a><a class="btn ghost" href="#about" data-i18n="h_cta2">About the company</a></div>
+</div></div>
+
+<section id="about"><div class="wrap">
+<div class="eyebrow" data-i18n="a_title">About Us</div>
+<h2 data-i18n="a_head">A Stockholm restaurant business since 2016</h2>
+<div class="about-grid">
+<div>
+<h3 class="big" data-i18n="a_lead">Honest food, friendly service, a place to feel welcome.</h3>
+<p data-i18n="a_p1">Aziz Cömert AB is a Swedish limited company (aktiebolag), registered in August 2016 and based at Spelvägen 5 in Trångsund, Stockholm. Our registered business is to operate a restaurant and conduct related activities.</p>
+<p data-i18n="a_p2">We are a small, dedicated team focused on quality food and attentive service for our guests. Our mobile apps do not collect personal data and do not use tracking or analytics, and we are open about who we are and how to reach us.</p>
+</div>
+<aside class="facts">
+<h4 data-i18n="f_h">Company at a glance</h4>
+<div><span data-i18n="f_legal">Legal name</span><b>Aziz Cömert AB</b></div>
+<div><span data-i18n="f_form">Company form</span><b data-i18n="f_formv">Limited company (AB)</b></div>
+<div><span data-i18n="k_org">Org. no.</span><b>559072-8720</b></div>
+<div><span data-i18n="f_reg">Registered</span><b data-i18n="f_regv">August 2016</b></div>
+<div><span data-i18n="f_focus">Industry (SNI)</span><b data-i18n="f_focusv">56110 – Restaurant activities</b></div>
+<div><span data-i18n="f_hq">Headquarters</span><b>Stockholm, Sweden</b></div>
+<div><span data-i18n="f_emp">Employees</span><b data-i18n="f_empv">Approx. 3</b></div>
+<div><span data-i18n="f_status">Status</span><b data-i18n="f_statusv">Active</b></div>
+</aside>
+</div>
+<div class="grid">
+<div class="card photo q"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.3 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></div><h3 data-i18n="c1_t">Quality</h3><p data-i18n="c1_p">Carefully prepared food made with attention to detail.</p></div>
+<div class="card photo h"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.5-7 10-7 10z"/></svg></div><h3 data-i18n="c2_t">Hospitality</h3><p data-i18n="c2_p">Friendly, attentive service so every guest feels welcome.</p></div>
+<div class="card photo t"><div class="icon"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div><h3 data-i18n="c3_t">Transparency</h3><p data-i18n="c3_p">Clear company details and open communication with our guests.</p></div>
+</div>
+</div></section>
+
+<section id="contact" class="alt"><div class="wrap">
+<h2 data-i18n="k_title">Contact</h2>
+<p class="lead" data-i18n="k_p">Questions about our company or apps? We’re happy to help.</p>
+<dl>
+<dt data-i18n="k_company">Company</dt><dd>Aziz Cömert AB</dd>
+<dt data-i18n="k_org">Org. no.</dt><dd>559072-8720</dd>
+<dt data-i18n="k_addr">Address</dt><dd>Spelvägen 5, 142 62 Trångsund, Stockholm, Sweden</dd>
+<dt data-i18n="k_email">Email</dt><dd><a href="mailto:contact@restauacomert.online">contact@restauacomert.online</a></dd>
+<dt data-i18n="k_phone">Phone</dt><dd><a href="tel:+447307379877">+447307379877</a></dd>
+</dl>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<div>© <span id="yr"></span> Aziz Cömert AB · Org.n 559072-8720<br><span data-i18n="rights">All rights reserved.</span></div>
+<div><a href="privacy-policy.html" data-i18n="privacy">Privacy Policy</a></div>
+</div></footer>
+
+<script>
+const T={
+en:{nav_home:"Home",nav_about:"About",nav_contact:"Contact",h_title:"Digital solutions and mobile apps, built with care.",h_sub:"Aziz Cömert AB is a registered Swedish company focused on reliable, privacy-respecting software for mobile users.",h_cta:"Get in touch",a_title:"About Us",a_p:"Aziz Cömert AB is a limited company (aktiebolag) registered in Sweden and based in Stockholm. We design and publish mobile applications with a focus on quality, simplicity and respect for user privacy.",c1_t:"Quality",c1_p:"Clean, dependable apps that do what they promise.",c2_t:"Privacy first",c2_p:"Our mobile apps do not collect personal data or use tracking.",c3_t:"Transparency",c3_p:"Clear company details and open communication with our users.",k_title:"Contact",k_p:"Questions about our company or apps? We’re happy to help.",k_company:"Company",k_org:"Org. no.",k_addr:"Address",k_email:"Email",k_phone:"Phone",rights:"All rights reserved.",privacy:"Privacy Policy"},
+sv:{nav_home:"Hem",nav_about:"Om oss",nav_contact:"Kontakt",h_title:"Digitala lösningar och mobilappar, byggda med omsorg.",h_sub:"Aziz Cömert AB är ett registrerat svenskt bolag som fokuserar på pålitlig programvara för mobilanvändare som respekterar din integritet.",h_cta:"Kontakta oss",a_title:"Om oss",a_p:"Aziz Cömert AB är ett aktiebolag registrerat i Sverige med säte i Stockholm. Vi utvecklar och publicerar mobilappar med fokus på kvalitet, enkelhet och respekt för användarnas integritet.",c1_t:"Kvalitet",c1_p:"Rena, pålitliga appar som gör vad de lovar.",c2_t:"Integritet först",c2_p:"Våra mobilappar samlar inte in personuppgifter och använder ingen spårning.",c3_t:"Transparens",c3_p:"Tydliga företagsuppgifter och öppen kommunikation med våra användare.",k_title:"Kontakt",k_p:"Frågor om vårt företag eller våra appar? Vi hjälper gärna till.",k_company:"Företag",k_org:"Org.nr",k_addr:"Adress",k_email:"E-post",k_phone:"Telefon",rights:"Alla rättigheter förbehållna.",privacy:"Integritetspolicy"},
+fr:{nav_home:"Accueil",nav_about:"À propos",nav_contact:"Contact",h_title:"Solutions numériques et applications mobiles, conçues avec soin.",h_sub:"Aziz Cömert AB est une société suédoise enregistrée, spécialisée dans des logiciels fiables et respectueux de la vie privée pour les utilisateurs mobiles.",h_cta:"Nous contacter",a_title:"À propos de nous",a_p:"Aziz Cömert AB est une société anonyme (aktiebolag) enregistrée en Suède et basée à Stockholm. Nous concevons et publions des applications mobiles axées sur la qualité, la simplicité et le respect de la vie privée.",c1_t:"Qualité",c1_p:"Des applications soignées et fiables qui tiennent leurs promesses.",c2_t:"Vie privée d’abord",c2_p:"Nos applications mobiles ne collectent aucune donnée personnelle et n’utilisent aucun suivi.",c3_t:"Transparence",c3_p:"Informations d’entreprise claires et communication ouverte avec nos utilisateurs.",k_title:"Contact",k_p:"Des questions sur notre société ou nos applications ? Nous sommes là pour vous aider.",k_company:"Société",k_org:"N° d’org.",k_addr:"Adresse",k_email:"E-mail",k_phone:"Téléphone",rights:"Tous droits réservés.",privacy:"Politique de confidentialité"}};
+function setLang(l){
+  if(!T[l])l="en";
+  document.documentElement.lang=l;
+  document.querySelectorAll("[data-i18n]").forEach(e=>{const v=T[l][e.dataset.i18n];if(v)e.textContent=v});
+  document.getElementById("lang").value=l;
+  try{localStorage.setItem("lang",l)}catch(e){}
+}
+Object.assign(T.en,{h_cta2:"About the company",a_head:"Trustworthy mobile software, built in Stockholm",a_lead:"Simple, dependable apps that respect their users.",a_p1:"Aziz Cömert AB is a Swedish limited company (aktiebolag) based in Stockholm. We design, build and publish mobile applications with a focus on quality, usability and long-term reliability.",a_p2:"Our mission is straightforward: deliver useful apps without compromising privacy. Our mobile apps do not collect personal data and do not use tracking or analytics, and we are open about who we are and how to reach us.",f_h:"Company at a glance",f_legal:"Legal name",f_form:"Company form",f_formv:"Limited company (AB)",f_hq:"Headquarters",f_focus:"Focus",f_focusv:"Mobile applications"});
+Object.assign(T.sv,{h_cta2:"Om företaget",a_head:"Pålitlig mobilprogramvara, byggd i Stockholm",a_lead:"Enkla, pålitliga appar som respekterar sina användare.",a_p1:"Aziz Cömert AB är ett svenskt aktiebolag med säte i Stockholm. Vi utformar, utvecklar och publicerar mobilappar med fokus på kvalitet, användbarhet och långsiktig tillförlitlighet.",a_p2:"Vårt uppdrag är enkelt: leverera användbara appar utan att kompromissa med integriteten. Våra mobilappar samlar inte in personuppgifter och använder varken spårning eller analys, och vi är öppna med vilka vi är och hur man når oss.",f_h:"Företaget i korthet",f_legal:"Juridiskt namn",f_form:"Bolagsform",f_formv:"Aktiebolag (AB)",f_hq:"Huvudkontor",f_focus:"Inriktning",f_focusv:"Mobilappar"});
+Object.assign(T.fr,{h_cta2:"À propos de l’entreprise",a_head:"Des logiciels mobiles de confiance, conçus à Stockholm",a_lead:"Des applications simples et fiables qui respectent leurs utilisateurs.",a_p1:"Aziz Cömert AB est une société suédoise (aktiebolag) basée à Stockholm. Nous concevons, développons et publions des applications mobiles axées sur la qualité, la facilité d’utilisation et la fiabilité à long terme.",a_p2:"Notre mission est simple : proposer des applications utiles sans compromettre la vie privée. Nos applications mobiles ne collectent aucune donnée personnelle et n’utilisent ni suivi ni analyse, et nous sommes transparents sur qui nous sommes et comment nous joindre.",f_h:"L’entreprise en bref",f_legal:"Raison sociale",f_form:"Forme juridique",f_formv:"Société anonyme (AB)",f_hq:"Siège",f_focus:"Activité",f_focusv:"Applications mobiles"});
+Object.assign(T.en,{h_title:"Good food and warm hospitality in Stockholm.",h_sub:"Aziz Cömert AB is a Swedish limited company operating a restaurant in the Stockholm area since 2016.",a_head:"A Stockholm restaurant business since 2016",a_lead:"Honest food, friendly service, a place to feel welcome.",a_p1:"Aziz Cömert AB is a Swedish limited company (aktiebolag), registered in August 2016 and based at Spelvägen 5 in Trångsund, Stockholm. Our registered business is to operate a restaurant and conduct related activities.",a_p2:"We are a small, dedicated team focused on quality food and attentive service for our guests. Our mobile apps do not collect personal data and do not use tracking or analytics, and we are open about who we are and how to reach us.",c1_p:"Carefully prepared food made with attention to detail.",c2_t:"Hospitality",c2_p:"Friendly, attentive service so every guest feels welcome.",c3_p:"Clear company details and open communication with our guests.",f_reg:"Registered",f_regv:"August 2016",f_focus:"Industry (SNI)",f_focusv:"56110 – Restaurant activities",f_emp:"Employees",f_empv:"Approx. 3",f_status:"Status",f_statusv:"Active"});
+Object.assign(T.sv,{h_title:"God mat och varm gästfrihet i Stockholm.",h_sub:"Aziz Cömert AB är ett svenskt aktiebolag som driver restaurang i Stockholmsområdet sedan 2016.",a_head:"Restaurangverksamhet i Stockholm sedan 2016",a_lead:"Ärlig mat, vänlig service och en plats där du känner dig välkommen.",a_p1:"Aziz Cömert AB är ett svenskt aktiebolag, registrerat i augusti 2016 med adress Spelvägen 5 i Trångsund, Stockholm. Bolagets registrerade verksamhet är att bedriva restaurang samt därmed förenlig verksamhet.",a_p2:"Vi är ett litet, engagerat team med fokus på kvalitetsmat och uppmärksam service för våra gäster. Våra mobilappar samlar inte in personuppgifter och använder varken spårning eller analys, och vi är öppna med vilka vi är och hur man når oss.",c1_p:"Omsorgsfullt tillagad mat med känsla för detaljer.",c2_t:"Gästfrihet",c2_p:"Vänlig och uppmärksam service så att varje gäst känner sig välkommen.",c3_p:"Tydliga företagsuppgifter och öppen kommunikation med våra gäster.",f_reg:"Registrerat",f_regv:"Augusti 2016",f_focus:"Bransch (SNI)",f_focusv:"56110 – Restaurangverksamhet",f_emp:"Anställda",f_empv:"Cirka 3",f_status:"Status",f_statusv:"Aktivt"});
+Object.assign(T.fr,{h_title:"Bonne cuisine et chaleureuse hospitalité à Stockholm.",h_sub:"Aziz Cömert AB est une société suédoise qui exploite un restaurant dans la région de Stockholm depuis 2016.",a_head:"Une activité de restauration à Stockholm depuis 2016",a_lead:"Une cuisine honnête, un service aimable, un lieu où l’on se sent bienvenu.",a_p1:"Aziz Cömert AB est une société anonyme suédoise (aktiebolag), enregistrée en août 2016 et établie au Spelvägen 5 à Trångsund, Stockholm. Son activité enregistrée consiste à exploiter un restaurant et à mener des activités connexes.",a_p2:"Nous sommes une petite équipe dévouée, attachée à une cuisine de qualité et à un service attentionné. Nos applications mobiles ne collectent aucune donnée personnelle et n’utilisent ni suivi ni analyse, et nous sommes transparents sur qui nous sommes et comment nous joindre.",c1_p:"Une cuisine préparée avec soin et souci du détail.",c2_t:"Hospitalité",c2_p:"Un service aimable et attentif pour que chaque client se sente accueilli.",c3_p:"Informations d’entreprise claires et communication ouverte avec nos clients.",f_reg:"Enregistrement",f_regv:"Août 2016",f_focus:"Secteur (SNI)",f_focusv:"56110 – Restauration",f_emp:"Employés",f_empv:"Environ 3",f_status:"Statut",f_statusv:"Actif"});
+let saved="en";
+try{saved=localStorage.getItem("lang")||(navigator.language||"en").slice(0,2)}catch(e){}
+document.getElementById("lang").addEventListener("change",e=>setLang(e.target.value));
+document.getElementById("yr").textContent=new Date().getFullYear();
+setLang(saved);
+</script>
+</body>
+</html>
